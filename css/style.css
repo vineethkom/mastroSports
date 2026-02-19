@@ -2929,22 +2929,17 @@ body {
 }
 
 /* ========================================
-   MOBILE MENU - COMPLETE FIX
+   MOBILE MENU - SIMPLE TOGGLE
    ======================================== */
 
    @media (max-width: 767px) {
-    /* Center logo on mobile */
-    .header-section {
-        padding: 20px 0 !important;
-    }
-    
+    /* Center logo */
     .main-menu {
         justify-content: center !important;
     }
     
     .main-menu .logo {
         margin: 0 auto !important;
-        text-align: center !important;
     }
     
     .main-menu .logo img {
@@ -2956,35 +2951,32 @@ body {
         display: none !important;
     }
     
-    /* Hamburger button - aligned properly */
+    /* Hamburger button */
     .slicknav_menu {
-        background: transparent !important;
         position: fixed !important;
-        top: 22px !important;
+        top: 25px !important;
         right: 20px !important;
         z-index: 99999 !important;
+        background: transparent !important;
     }
     
-    /* Hide "MENU" text */
     .slicknav_menutxt {
         display: none !important;
     }
     
-    /* Hamburger icon */
     .slicknav_btn {
-        background: rgba(0, 0, 0, 0.7) !important;
-        padding: 8px 10px !important;
-        border-radius: 6px !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        padding: 10px !important;
         border: 2px solid #FFD700 !important;
+        border-radius: 8px !important;
     }
     
     .slicknav_icon-bar {
         background: #FFD700 !important;
         height: 3px !important;
-        width: 22px !important;
     }
     
-    /* FULLSCREEN BLACK OVERLAY */
+    /* Fullscreen black overlay */
     .slicknav_nav {
         position: fixed !important;
         top: 0 !important;
@@ -2993,29 +2985,22 @@ body {
         height: 100vh !important;
         background: rgba(0, 0, 0, 0.97) !important;
         z-index: 99998 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
     }
     
-    /* Centered buttons */
     .slicknav_nav ul {
         display: flex !important;
         flex-direction: column !important;
+        justify-content: center !important;
         align-items: center !important;
+        height: 100vh !important;
         gap: 25px !important;
-        padding: 0 !important;
-        margin: 0 !important;
     }
     
-    /* Clean badge buttons */
+    /* Badge buttons */
     .slicknav_nav a {
         background: linear-gradient(90deg, #233EDE 0%, #FFD700 100%) !important;
         padding: 2px !important;
         border-radius: 50px !important;
-        text-decoration: none !important;
-        display: block !important;
-        min-width: 220px !important;
     }
     
     .slicknav_nav a span {
@@ -3024,31 +3009,21 @@ body {
         font-size: 14px !important;
         font-weight: 900 !important;
         letter-spacing: 2.5px !important;
-        text-transform: uppercase !important;
         padding: 14px 40px !important;
         border-radius: 50px !important;
         display: block !important;
-        text-align: center !important;
     }
     
-    /* X CLOSE BUTTON */
-    .slicknav_nav::before {
-        content: "✕";
-        position: fixed;
-        top: 25px;
-        right: 25px;
-        font-size: 32px;
-        color: #FFD700;
-        background: rgba(0, 0, 0, 0.8);
-        width: 45px;
-        height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 2px solid #FFD700;
-        z-index: 999999;
-        cursor: pointer;
+    /* X when open - SlickNav does this automatically */
+    .slicknav_open .slicknav_icon-bar:nth-child(1) {
+        transform: rotate(45deg) translateY(8px) !important;
     }
-}
+    
+    .slicknav_open .slicknav_icon-bar:nth-child(2) {
+        opacity: 0 !important;
+    }
+    
+    .slicknav_open .slicknav_icon-bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px) !important;
+    }
 }
