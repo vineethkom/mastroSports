@@ -333,18 +333,28 @@ Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --
     <!-- Footer Section End -->
 
     <script>
-        // Close menu when X is clicked
-        document.addEventListener('click', function(e) {
-            const nav = document.querySelector('.slicknav_nav');
-            if (nav && nav.style.display !== 'none') {
-                const rect = { top: 25, right: window.innerWidth - 25, width: 45, height: 45 };
-                if (e.clientX >= rect.right - rect.width && 
-                    e.clientX <= rect.right && 
-                    e.clientY >= rect.top && 
-                    e.clientY <= rect.top + rect.height) {
-                    document.querySelector('.slicknav_btn').click();
+        // Force close menu when clicking anywhere on overlay or X
+        document.addEventListener('DOMContentLoaded', function() {
+            // Close when clicking the overlay background
+            document.addEventListener('click', function(e) {
+                const nav = document.querySelector('.slicknav_nav');
+                const btn = document.querySelector('.slicknav_btn');
+                
+                if (nav && window.getComputedStyle(nav).display !== 'none') {
+                    // Close if clicking on the dark overlay (not on buttons)
+                    if (e.target === nav || e.target.closest('.slicknav_nav') === nav) {
+                        btn.click();
+                    }
                 }
-            }
+            });
+            
+            // Prevent button clicks from closing menu
+            const links = document.querySelectorAll('.slicknav_nav a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
         });
         </script>
 
