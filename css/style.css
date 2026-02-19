@@ -3028,10 +3028,18 @@ body {
     }
 }
 
+/* FORCE hamburger down - NUCLEAR */
 @media (max-width: 767px) {
-    .slicknav_menu {
-        top: 40px !important;
-        margin-top: 0 !important;
-        padding-top: 0 !important;
+    #mobile-menu-wrap {
+        position: fixed !important;
+        top: 35px !important;
+        right: 20px !important;
+        z-index: 99999 !important;
+    }
+    
+    #mobile-menu-wrap .slicknav_menu {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
     }
 }
