@@ -3014,25 +3014,14 @@ body {
         display: block !important;
     }
     
-    /* X when open - SlickNav does this automatically */
-    .slicknav_open .slicknav_icon-bar:nth-child(1) {
-        transform: rotate(45deg) translateY(8px) !important;
-    }
-    
-    .slicknav_open .slicknav_icon-bar:nth-child(2) {
-        opacity: 0 !important;
-    }
-    
-    .slicknav_open .slicknav_icon-bar:nth-child(3) {
-        transform: rotate(-45deg) translateY(-8px) !important;
-    }
+   
 }
 
 /* FORCE hamburger down - NUCLEAR */
 @media (max-width: 767px) {
     #mobile-menu-wrap {
         position: fixed !important;
-        top: 45px !important;
+        top: 55px !important;
         right: 18px !important;
         z-index: 99999 !important;
     }
