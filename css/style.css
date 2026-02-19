@@ -2928,122 +2928,116 @@ body {
     }
 }
 
-/* Mobile Menu - FULLSCREEN BLACK OVERLAY with CENTERED BUTTONS */
-
+/* ========================================
+   MOBILE MENU - PROPER TOGGLE
+   ======================================== */
 
    @media (max-width: 767px) {
-    /* Hide default navigation buttons */
+    /* Hide regular desktop navigation */
     .main-menu .mobile-menu {
         display: none !important;
     }
     
-    /* Mobile menu toggle button - top right */
+    /* Mobile menu wrapper */
+    #mobile-menu-wrap {
+        display: block !important;
+    }
+    
+    /* Toggle button - fixed top right */
     .slicknav_menu {
         background: transparent !important;
-        padding: 0 !important;
         position: fixed !important;
         top: 20px !important;
         right: 20px !important;
         z-index: 99999 !important;
     }
     
-    /* Hamburger button styling */
+    /* Hamburger button */
     .slicknav_btn {
-        background: rgba(0, 0, 0, 0.7) !important;
-        padding: 12px !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        padding: 12px 14px !important;
         border-radius: 8px !important;
         border: 2px solid #FFD700 !important;
+        margin: 0 !important;
     }
     
     .slicknav_icon-bar {
         background: #FFD700 !important;
         height: 3px !important;
-        border-radius: 2px !important;
-    }
-    
-    /* HIDE menu by default */
-    .slicknav_nav {
-        display: none !important;
-    }
-    
-    /* SHOW menu when opened (slicknav adds this class) */
-    .slicknav_nav.slicknav_hidden {
-        display: none !important;
-    }
-    
-    .slicknav_menu .slicknav_nav {
+        width: 25px !important;
         display: block !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background: rgba(0, 0, 0, 0.98) !important;
-        z-index: 99998 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow: hidden !important;
+        margin: 4px 0 !important;
     }
     
-    /* Center menu items vertically */
+    /* MENU HIDDEN BY DEFAULT */
+    .slicknav_nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        z-index: 99998;
+        overflow-y: auto;
+    }
+    
+    /* When menu is OPEN */
+    .slicknav_nav.slicknav_open {
+        display: block !important;
+    }
+    
+    /* Menu items container */
     .slicknav_nav ul {
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        height: 100vh !important;
-        padding: 0 !important;
+        min-height: 100vh !important;
+        padding: 60px 20px !important;
         margin: 0 !important;
         list-style: none !important;
     }
     
     .slicknav_nav li {
-        margin: 20px 0 !important;
+        margin: 15px 0 !important;
+        width: 100% !important;
+        max-width: 300px !important;
     }
     
-    /* Badge-style buttons */
+    /* Badge buttons */
     .slicknav_nav a {
-        display: inline-block !important;
+        display: block !important;
         background: linear-gradient(90deg, #233EDE 0%, #FFD700 100%) !important;
         padding: 3px !important;
         border-radius: 50px !important;
         text-decoration: none !important;
-        text-align: center !important;
     }
     
-    .slicknav_nav a:hover {
-        transform: scale(1.05) !important;
+    .slicknav_nav a:after {
+        content: attr(title);
+        background: #1a1a1a;
+        color: #FFD700;
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 18px 40px;
+        border-radius: 50px;
+        display: block;
+        text-align: center;
     }
     
-    /* Inner button text */
-    .slicknav_nav a {
-        background: #1a1a1a !important;
-        color: #FFD700 !important;
-        font-size: 16px !important;
-        font-weight: 900 !important;
-        letter-spacing: 2px !important;
-        text-transform: uppercase !important;
-        padding: 18px 50px !important;
-        border-radius: 50px !important;
-        border: 3px solid transparent !important;
-        background: linear-gradient(90deg, #233EDE 0%, #FFD700 100%) !important;
-        background-clip: padding-box !important;
+    /* X button when open */
+    .slicknav_btn.slicknav_open .slicknav_icon-bar:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
     }
     
-    /* X close button when menu is open */
-    .slicknav_open .slicknav_icon-bar {
-        background: #FFD700 !important;
+    .slicknav_btn.slicknav_open .slicknav_icon-bar:nth-child(2) {
+        opacity: 0;
     }
     
-    .slicknav_open .slicknav_icon-bar:first-child {
-        transform: rotate(45deg) translate(5px, 5px) !important;
-    }
-    
-    .slicknav_open .slicknav_icon-bar:nth-child(2) {
-        opacity: 0 !important;
-    }
-    
-    .slicknav_open .slicknav_icon-bar:last-child {
-        transform: rotate(-45deg) translate(6px, -6px) !important;
+    .slicknav_btn.slicknav_open .slicknav_icon-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
     }
 }
