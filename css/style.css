@@ -3027,3 +3027,11 @@ body {
         transform: rotate(-45deg) translateY(-8px) !important;
     }
 }
+
+@media (max-width: 767px) {
+    .slicknav_menu {
+        top: 40px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
