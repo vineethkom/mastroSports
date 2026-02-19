@@ -3032,8 +3032,8 @@ body {
 @media (max-width: 767px) {
     #mobile-menu-wrap {
         position: fixed !important;
-        top: 35px !important;
-        right: 20px !important;
+        top: 45px !important;
+        right: 18px !important;
         z-index: 99999 !important;
     }
     
