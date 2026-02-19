@@ -208,7 +208,7 @@
     </div>
 </footer>
 
-<script>
+<!-- <script>
     // Close mobile menu when X is clicked
     document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth <= 767) {
@@ -222,7 +222,25 @@
             }
         }
     });
-    </script>
+    </script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('.slicknav_nav');
+            if (nav) {
+                nav.addEventListener('click', function(e) {
+                    const rect = e.target.getBoundingClientRect();
+                    if (e.clientX > window.innerWidth - 80 && e.clientY < 80) {
+                        document.querySelector('.slicknav_btn').click();
+                    }
+                });
+            }
+        });
+        </script>
+
+        
+        
+        
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
