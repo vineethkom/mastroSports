@@ -3032,3 +3032,11 @@ body {
         right: 0 !important;
     }
 }
+
+/* MPCL breadcrumb title - smaller on mobile only */
+@media (max-width: 767px) {
+    .breadcrumb-area .breadcrumb-content h2 {
+        font-size: 33px !important;
+        line-height: 1.2 !important;
+    }
+}
