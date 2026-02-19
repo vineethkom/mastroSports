@@ -3033,10 +3033,11 @@ body {
     }
 }
 
-/* MPCL breadcrumb title - smaller on mobile only */
+/* MPCL breadcrumb title ONLY - smaller on mobile */
 @media (max-width: 767px) {
-    .breadcrumb-area .breadcrumb-content h2 {
-        font-size: 25px !important;
-        line-height: 1.2 !important;
+    .mpcl-breadcrumb .breadcrumb-content h2 {
+        font-size: 30px !important;
+        line-height: 1.1 !important;
+        padding: 0 20px !important;
     }
 }
