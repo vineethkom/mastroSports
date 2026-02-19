@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
+
+
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -239,7 +241,21 @@
         </script> -->
 
         
-        
+        <script>
+            // Close menu when X is clicked
+            document.addEventListener('click', function(e) {
+                const nav = document.querySelector('.slicknav_nav');
+                if (nav && nav.style.display !== 'none') {
+                    const rect = { top: 25, right: window.innerWidth - 25, width: 45, height: 45 };
+                    if (e.clientX >= rect.right - rect.width && 
+                        e.clientX <= rect.right && 
+                        e.clientY >= rect.top && 
+                        e.clientY <= rect.top + rect.height) {
+                        document.querySelector('.slicknav_btn').click();
+                    }
+                }
+            });
+            </script>
         
 
     <!-- Js Plugins -->
