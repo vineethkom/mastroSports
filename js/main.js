@@ -28,9 +28,9 @@
         allowParentLinks: true
     });
 
-    // Close menu ONLY when clicking a link, not the button
+   // Close menu when clicking a link
 $('.slicknav_nav a').on('click', function() {
-    $('.slicknav_nav').slideUp(300);
+    $('.slicknav_btn').click();
 });
 
     /*------------------
