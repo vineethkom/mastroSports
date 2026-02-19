@@ -1,0 +1,455 @@
+<!--
+=================================================================
+SIMPLE CLEAN COUNTDOWN SECTION FOR MPCL PAGE
+League starts: February 28, 2026
+=================================================================
+
+OPTION 1: SIMPLE WHITE BOXES (RECOMMENDED)
+Add this section BEFORE the Teams Section
+-->
+
+<!-- Countdown Section Begin - Simple Clean Design -->
+<section style="background: #f8f9fa; 
+                padding: 80px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <!-- Title -->
+                <div style="margin-bottom: 50px;">
+                    <span style="color: #233EDE; 
+                                 font-size: 14px; 
+                                 font-weight: 900; 
+                                 letter-spacing: 4px; 
+                                 text-transform: uppercase; 
+                                 display: block; 
+                                 margin-bottom: 15px;">
+                        SEASON 2026 KICKOFF
+                    </span>
+                    <h2 style="color: #1a1a1a; 
+                               font-size: 42px; 
+                               font-weight: 700; 
+                               text-transform: uppercase; 
+                               margin: 0;">
+                        League Starts In
+                    </h2>
+                </div>
+                
+                <!-- Countdown Timer - Simple Boxes -->
+                <div id="countdown" style="display: flex; 
+                                          justify-content: center; 
+                                          gap: 20px; 
+                                          flex-wrap: wrap;
+                                          margin-bottom: 30px;">
+                    <!-- Days -->
+                    <div style="background: #fff; 
+                                border: 3px solid #233EDE; 
+                                border-radius: 10px; 
+                                padding: 30px 35px; 
+                                min-width: 130px;
+                                box-shadow: 0 4px 15px rgba(35, 62, 222, 0.1);
+                                transition: all 0.3s ease;">
+                        <div id="days" style="font-size: 52px; 
+                                             font-weight: 700; 
+                                             color: #233EDE; 
+                                             line-height: 1; 
+                                             margin-bottom: 8px;">
+                            00
+                        </div>
+                        <div style="font-size: 13px; 
+                                   font-weight: 700; 
+                                   color: #666; 
+                                   text-transform: uppercase; 
+                                   letter-spacing: 1.5px;">
+                            Days
+                        </div>
+                    </div>
+                    
+                    <!-- Hours -->
+                    <div style="background: #fff; 
+                                border: 3px solid #233EDE; 
+                                border-radius: 10px; 
+                                padding: 30px 35px; 
+                                min-width: 130px;
+                                box-shadow: 0 4px 15px rgba(35, 62, 222, 0.1);
+                                transition: all 0.3s ease;">
+                        <div id="hours" style="font-size: 52px; 
+                                              font-weight: 700; 
+                                              color: #233EDE; 
+                                              line-height: 1; 
+                                              margin-bottom: 8px;">
+                            00
+                        </div>
+                        <div style="font-size: 13px; 
+                                   font-weight: 700; 
+                                   color: #666; 
+                                   text-transform: uppercase; 
+                                   letter-spacing: 1.5px;">
+                            Hours
+                        </div>
+                    </div>
+                    
+                    <!-- Minutes -->
+                    <div style="background: #fff; 
+                                border: 3px solid #233EDE; 
+                                border-radius: 10px; 
+                                padding: 30px 35px; 
+                                min-width: 130px;
+                                box-shadow: 0 4px 15px rgba(35, 62, 222, 0.1);
+                                transition: all 0.3s ease;">
+                        <div id="minutes" style="font-size: 52px; 
+                                                font-weight: 700; 
+                                                color: #233EDE; 
+                                                line-height: 1; 
+                                                margin-bottom: 8px;">
+                            00
+                        </div>
+                        <div style="font-size: 13px; 
+                                   font-weight: 700; 
+                                   color: #666; 
+                                   text-transform: uppercase; 
+                                   letter-spacing: 1.5px;">
+                            Minutes
+                        </div>
+                    </div>
+                    
+                    <!-- Seconds -->
+                    <div style="background: #fff; 
+                                border: 3px solid #233EDE; 
+                                border-radius: 10px; 
+                                padding: 30px 35px; 
+                                min-width: 130px;
+                                box-shadow: 0 4px 15px rgba(35, 62, 222, 0.1);
+                                transition: all 0.3s ease;">
+                        <div id="seconds" style="font-size: 52px; 
+                                                font-weight: 700; 
+                                                color: #233EDE; 
+                                                line-height: 1; 
+                                                margin-bottom: 8px;">
+                            00
+                        </div>
+                        <div style="font-size: 13px; 
+                                   font-weight: 700; 
+                                   color: #666; 
+                                   text-transform: uppercase; 
+                                   letter-spacing: 1.5px;">
+                            Seconds
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Date Info -->
+                <div>
+                    <p style="color: #666; 
+                             font-size: 16px; 
+                             font-weight: 500; 
+                             margin: 0;">
+                        📅 First Match: <strong style="color: #233EDE;">February 28, 2026</strong> | 📍 Prime Arena, Hyderabad
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Countdown Section End -->
+
+<!-- JavaScript for Countdown Timer -->
+<script>
+// Set the date for the league start
+const countDownDate = new Date("Feb 28, 2026 10:00:00").getTime();
+
+// Update the countdown every 1 second
+const countdownFunction = setInterval(function() {
+    
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+    document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+    
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "<div style='background: #233EDE; color: #fff; padding: 40px; border-radius: 10px; font-size: 36px; font-weight: 700;'>🏏 LEAGUE IS LIVE!</div>";
+    }
+}, 1000);
+</script>
+
+<style>
+/* Hover effect for countdown boxes */
+div[style*="min-width: 130px"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(35, 62, 222, 0.2);
+}
+
+/* Mobile responsive */
+@media only screen and (max-width: 767px) {
+    div[style*="min-width: 130px"] {
+        min-width: 90px !important;
+        padding: 20px 20px !important;
+    }
+    
+    #days, #hours, #minutes, #seconds {
+        font-size: 38px !important;
+    }
+    
+    h2[style*="font-size: 42px"] {
+        font-size: 32px !important;
+    }
+}
+</style>
+
+<!--
+=================================================================
+
+OPTION 2: CALENDAR BOOK STYLE (Alternative Design)
+
+=================================================================
+-->
+
+<!-- Countdown Section Begin - Calendar Style -->
+<section style="background: #fff; 
+                padding: 80px 0;
+                border-top: 5px solid #233EDE;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Calendar Card -->
+                <div style="max-width: 800px; 
+                            margin: 0 auto; 
+                            background: #fff; 
+                            border: 3px solid #e0e0e0; 
+                            border-radius: 15px; 
+                            overflow: hidden;
+                            box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    
+                    <!-- Calendar Header (Red strip like calendar) -->
+                    <div style="background: #233EDE; 
+                                padding: 20px; 
+                                text-align: center;">
+                        <h3 style="color: #fff; 
+                                   font-size: 18px; 
+                                   font-weight: 700; 
+                                   text-transform: uppercase; 
+                                   letter-spacing: 2px; 
+                                   margin: 0;">
+                            🏏 MPCL Season 2026
+                        </h3>
+                    </div>
+                    
+                    <!-- Calendar Date -->
+                    <div style="background: #f8f9fa; 
+                                padding: 30px; 
+                                text-align: center; 
+                                border-bottom: 3px solid #e0e0e0;">
+                        <div style="font-size: 72px; 
+                                   font-weight: 700; 
+                                   color: #233EDE; 
+                                   line-height: 1; 
+                                   margin-bottom: 5px;">
+                            28
+                        </div>
+                        <div style="font-size: 24px; 
+                                   font-weight: 600; 
+                                   color: #666; 
+                                   text-transform: uppercase; 
+                                   letter-spacing: 2px;">
+                            February 2026
+                        </div>
+                    </div>
+                    
+                    <!-- Countdown -->
+                    <div style="padding: 40px 30px;">
+                        <div style="text-align: center; margin-bottom: 30px;">
+                            <p style="font-size: 18px; 
+                                     font-weight: 600; 
+                                     color: #1a1a1a; 
+                                     margin: 0;">
+                                League starts in:
+                            </p>
+                        </div>
+                        
+                        <div id="countdown-calendar" style="display: flex; 
+                                                             justify-content: center; 
+                                                             gap: 15px; 
+                                                             flex-wrap: wrap;">
+                            <!-- Days -->
+                            <div style="text-align: center; 
+                                        padding: 15px 20px; 
+                                        background: #f8f9fa; 
+                                        border-radius: 8px; 
+                                        min-width: 80px;">
+                                <div id="days-cal" style="font-size: 36px; 
+                                                          font-weight: 700; 
+                                                          color: #233EDE; 
+                                                          margin-bottom: 5px;">
+                                    00
+                                </div>
+                                <div style="font-size: 11px; 
+                                           font-weight: 600; 
+                                           color: #666; 
+                                           text-transform: uppercase;">
+                                    Days
+                                </div>
+                            </div>
+                            
+                            <!-- Separator -->
+                            <div style="font-size: 36px; 
+                                       font-weight: 700; 
+                                       color: #233EDE; 
+                                       align-self: center; 
+                                       padding: 0 5px;">
+                                :
+                            </div>
+                            
+                            <!-- Hours -->
+                            <div style="text-align: center; 
+                                        padding: 15px 20px; 
+                                        background: #f8f9fa; 
+                                        border-radius: 8px; 
+                                        min-width: 80px;">
+                                <div id="hours-cal" style="font-size: 36px; 
+                                                           font-weight: 700; 
+                                                           color: #233EDE; 
+                                                           margin-bottom: 5px;">
+                                    00
+                                </div>
+                                <div style="font-size: 11px; 
+                                           font-weight: 600; 
+                                           color: #666; 
+                                           text-transform: uppercase;">
+                                    Hours
+                                </div>
+                            </div>
+                            
+                            <!-- Separator -->
+                            <div style="font-size: 36px; 
+                                       font-weight: 700; 
+                                       color: #233EDE; 
+                                       align-self: center; 
+                                       padding: 0 5px;">
+                                :
+                            </div>
+                            
+                            <!-- Minutes -->
+                            <div style="text-align: center; 
+                                        padding: 15px 20px; 
+                                        background: #f8f9fa; 
+                                        border-radius: 8px; 
+                                        min-width: 80px;">
+                                <div id="minutes-cal" style="font-size: 36px; 
+                                                             font-weight: 700; 
+                                                             color: #233EDE; 
+                                                             margin-bottom: 5px;">
+                                    00
+                                </div>
+                                <div style="font-size: 11px; 
+                                           font-weight: 600; 
+                                           color: #666; 
+                                           text-transform: uppercase;">
+                                    Minutes
+                                </div>
+                            </div>
+                            
+                            <!-- Separator -->
+                            <div style="font-size: 36px; 
+                                       font-weight: 700; 
+                                       color: #233EDE; 
+                                       align-self: center; 
+                                       padding: 0 5px;">
+                                :
+                            </div>
+                            
+                            <!-- Seconds -->
+                            <div style="text-align: center; 
+                                        padding: 15px 20px; 
+                                        background: #f8f9fa; 
+                                        border-radius: 8px; 
+                                        min-width: 80px;">
+                                <div id="seconds-cal" style="font-size: 36px; 
+                                                             font-weight: 700; 
+                                                             color: #233EDE; 
+                                                             margin-bottom: 5px;">
+                                    00
+                                </div>
+                                <div style="font-size: 11px; 
+                                           font-weight: 600; 
+                                           color: #666; 
+                                           text-transform: uppercase;">
+                                    Seconds
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Location -->
+                        <div style="text-align: center; 
+                                   margin-top: 30px; 
+                                   padding-top: 20px; 
+                                   border-top: 2px solid #e0e0e0;">
+                            <p style="color: #666; 
+                                     font-size: 14px; 
+                                     margin: 0;">
+                                📍 <strong>Prime Arena, Hyderabad</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Countdown Section End -->
+
+<!-- JavaScript for Calendar Countdown -->
+<script>
+const countDownDate = new Date("Feb 28, 2026 10:00:00").getTime();
+
+const countdownFunction = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // For calendar style
+    if (document.getElementById("days-cal")) {
+        document.getElementById("days-cal").innerHTML = String(days).padStart(2, '0');
+        document.getElementById("hours-cal").innerHTML = String(hours).padStart(2, '0');
+        document.getElementById("minutes-cal").innerHTML = String(minutes).padStart(2, '0');
+        document.getElementById("seconds-cal").innerHTML = String(seconds).padStart(2, '0');
+    }
+    
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+    }
+}, 1000);
+</script>
+
+<!--
+=================================================================
+WHICH ONE TO USE?
+=================================================================
+
+OPTION 1: Simple White Boxes
+- Clean and modern
+- Blue borders
+- Light gray background
+- Best for minimalist look
+
+OPTION 2: Calendar Book Style
+- Looks like a tear-off calendar
+- Blue header bar
+- Shows date prominently
+- More unique design
+
+Choose the one you like and paste into classes.html!
+
+=================================================================
+-->
