@@ -209,6 +209,22 @@
     </footer>
     <!-- Footer Section End -->
 
+    <script>
+        // Close mobile menu when X is clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.innerWidth <= 767) {
+                const nav = document.querySelector('.slicknav_nav');
+                if (nav) {
+                    nav.addEventListener('click', function(e) {
+                        if (e.target === nav || e.target.closest('.slicknav_nav:before')) {
+                            document.querySelector('.slicknav_btn').click();
+                        }
+                    });
+                }
+            }
+        });
+        </script>
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
