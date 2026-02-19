@@ -741,42 +741,23 @@ padding: 10px 20px !important;
     </style>
 
     <script>
-        // Make X button clickable to close menu
+        // Simple: Click black area to close menu
         document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
+            document.body.addEventListener('click', function(e) {
                 const nav = document.querySelector('.slicknav_nav');
-                if (nav) {
-                    // Create actual X button element
-                    const closeBtn = document.createElement('div');
-                    closeBtn.innerHTML = '✕';
-                    closeBtn.style.cssText = `
-                        position: fixed;
-                        top: 25px;
-                        right: 25px;
-                        font-size: 32px;
-                        color: #FFD700;
-                        background: rgba(0, 0, 0, 0.8);
-                        width: 45px;
-                        height: 45px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 50%;
-                        border: 2px solid #FFD700;
-                        z-index: 999999;
-                        cursor: pointer;
-                    `;
-                    
-                    closeBtn.onclick = function() {
+                const isVisible = nav && window.getComputedStyle(nav).display !== 'none';
+                
+                if (isVisible) {
+                    // If clicking outside buttons (on the black overlay)
+                    const clickedButton = e.target.closest('.slicknav_nav a');
+                    if (!clickedButton) {
                         document.querySelector('.slicknav_btn').click();
-                    };
-                    
-                    nav.appendChild(closeBtn);
+                    }
                 }
-            }, 100);
+            }, true);
         });
         </script>
-        
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
