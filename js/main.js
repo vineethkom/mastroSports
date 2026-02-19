@@ -1,9 +1,4 @@
-/* =================================
-------------------------------------
-  TopGym | Fitness HTML Template
-  Version: 1.0
- ------------------------------------
- ====================================*/
+
 
 'use strict';
 
@@ -32,6 +27,16 @@
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
     });
+
+    // Fix SlickNav toggle on mobile
+$('.slicknav_btn').on('click', function() {
+    $('.slicknav_nav').slideToggle(300);
+});
+
+// Close menu when clicking a link
+$('.slicknav_nav a').on('click', function() {
+    $('.slicknav_nav').slideUp(300);
+});
 
     /*------------------
 		Search Bar Wrap
