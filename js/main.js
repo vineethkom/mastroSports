@@ -28,12 +28,7 @@
         allowParentLinks: true
     });
 
-    // Fix SlickNav toggle on mobile
-$('.slicknav_btn').on('click', function() {
-    $('.slicknav_nav').slideToggle(300);
-});
-
-// Close menu when clicking a link
+    // Close menu ONLY when clicking a link, not the button
 $('.slicknav_nav a').on('click', function() {
     $('.slicknav_nav').slideUp(300);
 });
