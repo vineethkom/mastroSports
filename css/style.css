@@ -2895,3 +2895,116 @@ body {
 .section-title h2 {
     color: #1a1a1a !important;
 }
+
+/* Mobile Footer Logo - MUCH SMALLER */
+@media (max-width: 767px) {
+    .footer-logo img {
+        max-width: 150px !important;
+    }
+}
+
+/* Mobile Header Logo - CENTERED */
+@media (max-width: 767px) {
+    .header-section {
+        padding: 15px 0 !important;
+    }
+    
+    .main-menu {
+        justify-content: center !important;
+    }
+    
+    .main-menu .logo {
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    
+    .main-menu .logo img {
+        max-height: 60px !important;
+    }
+    
+    /* Hide navigation buttons on mobile - they'll be in menu */
+    .main-menu .mobile-menu {
+        display: none !important;
+    }
+}
+
+/* Mobile Menu - FULLSCREEN BLACK OVERLAY with CENTERED BUTTONS */
+@media (max-width: 767px) {
+    /* Slicknav mobile menu container */
+    .slicknav_menu {
+        background: transparent !important;
+        padding: 0 !important;
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+    }
+    
+    /* Menu toggle button */
+    .slicknav_btn {
+        background: rgba(0, 0, 0, 0.6) !important;
+        padding: 10px !important;
+        border-radius: 8px !important;
+        margin: 0 !important;
+    }
+    
+    .slicknav_icon-bar {
+        background: #FFD700 !important;
+        height: 3px !important;
+    }
+    
+    /* Fullscreen black overlay */
+    .slicknav_nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(0, 0, 0, 0.95) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 9999 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Center menu items */
+    .slicknav_nav ul {
+        text-align: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Badge-style buttons in menu */
+    .slicknav_nav a {
+        display: inline-block !important;
+        background: linear-gradient(90deg, #233EDE 0%, #FFD700 100%) !important;
+        padding: 3px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        margin: 15px auto !important;
+        max-width: 200px !important;
+    }
+    
+    .slicknav_nav a span {
+        background: #1a1a1a !important;
+        color: #FFD700 !important;
+        font-size: 14px !important;
+        font-weight: 900 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 15px 40px !important;
+        border-radius: 50px !important;
+        display: block !important;
+    }
+    
+    /* Close button */
+    .slicknav_btn.slicknav_open {
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 99999 !important;
+    }
+}
