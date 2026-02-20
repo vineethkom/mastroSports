@@ -3233,3 +3233,47 @@ body {
 .flip-card:hover {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
 }
+
+/* Make YWOR image smaller */
+.classes-img img[src="img/classes/ywor.png"] {
+    width: 50% !important;
+    height: 90% !important;
+    object-fit: contain !important;
+    margin: auto !important;
+}
+
+
+/* Make Royal Cheetahs image fill container without cutting bottom */
+.classes-img img[src="img/classes/cheetas.jpg"] {
+    width: 108% !important;
+    height: 108% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Make TKR image smaller but fill container with black */
+.classes-img img[src="img/classes/TKRph.jpg"] {
+    width: 70% !important;
+    max-height: 250px !important;
+    object-fit: contain !important;
+    margin: auto !important;
+}
+
+/* Fill the TKR container completely with black */
+.flip-card .classes-img {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #000000 !important;
+    height: 320px !important;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset scroll for founders section */
+#founders-section {
+    scroll-margin-top: 150px;
+}
