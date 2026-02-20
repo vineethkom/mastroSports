@@ -2359,13 +2359,14 @@ ol {
 }
 
 /* Blue accent line at top - appears on hover */
+/* Blue accent line at top - appears on hover */
 .single-classes::before {
 	content: '' !important;
 	position: absolute !important;
 	top: 0 !important;
 	left: 0 !important;
 	right: 0 !important;
-	height: 4px !important;  /* Thicker line */
+	height: 4px !important;
 	background: linear-gradient(90deg, #233EDE 0%, #4a5fd8 100%) !important;
 	opacity: 0 !important;
 	transition: opacity 0.4s ease !important;
@@ -2374,6 +2375,26 @@ ol {
 
 .single-classes:hover::before {
 	opacity: 1 !important;
+}
+
+
+.flip-card::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    background: linear-gradient(135deg, #233EDE, #4a5fd8, #233EDE) !important;
+    border-radius: 8px !important;
+    opacity: 0 !important;
+    z-index: -1 !important;
+    transition: opacity 0.4s ease !important;
+    filter: blur(10px) !important;
+}
+
+.flip-card:hover::after {
+    opacity: 0.7 !important;
 }
 
 /* Team Logo Image Container */
@@ -3040,4 +3061,175 @@ body {
         line-height: 1.1 !important;
         padding: 0 20px !important;
     }
+}
+
+/* ========================================
+   FLIP CARD EFFECT FOR TEAM CARDS
+   ======================================== */
+
+   .flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* When card is flipped */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and back positioning */
+.flip-card-front,
+.flip-card-back {
+    position: relative;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Back of card - TALLER with scrolling for many players */
+.flip-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px !important; /* Fixed height for scrolling */
+    transform: rotateY(180deg);
+    background: #2d2d2d;
+    border-radius: 8px;
+    padding: 25px 20px;
+    overflow: hidden;
+}
+
+/* Players list styling - SCROLLABLE */
+.team-players {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-players h5 {
+    color: #FFD700 !important;
+    font-size: 20px !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 12px !important;
+    border-bottom: 2px solid #FFD700 !important;
+    flex-shrink: 0;
+}
+
+/* Scrollable players container */
+.players-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+/* Custom scrollbar */
+.players-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.players-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.players-list::-webkit-scrollbar-thumb {
+    background: #233EDE;
+    border-radius: 10px;
+}
+
+.players-list::-webkit-scrollbar-thumb:hover {
+    background: #FFD700;
+}
+
+/* Player names - compact */
+.player-name {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+    margin: 4px 0 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 5px !important;
+    border-left: 3px solid #233EDE !important;
+    transition: all 0.2s ease !important;
+}
+
+.player-name:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-left-color: #FFD700 !important;
+    transform: translateX(5px) !important;
+}
+
+.flip-hint {
+    color: #b0b0b0 !important;
+    font-size: 11px !important;
+    font-style: italic !important;
+    margin-top: 0 !important;
+    flex-shrink: 0;
+}
+
+/* Mobile - slightly shorter */
+@media (max-width: 767px) {
+    .flip-card-back {
+        height: 500px !important;
+    }
+    
+    .team-players h5 {
+        font-size: 18px !important;
+    }
+    
+    .player-name {
+        font-size: 13px !important;
+        padding: 7px 10px !important;
+    }
+}
+
+/* NUCLEAR FIX - Force flip cards to have NO blue anywhere */
+.flip-card,
+.flip-card:hover,
+.flip-card.single-classes,
+.flip-card.single-classes:hover,
+.flip-card *,
+.flip-card:hover * {
+    border-color: #3d3d3d !important;
+}
+
+/* Remove ALL blue backgrounds */
+.flip-card .classes-text,
+.flip-card:hover .classes-text,
+.flip-card .classes-img,
+.flip-card:hover .classes-img {
+    background: #2d2d2d !important;
+}
+
+/* Logo section stay dark */
+.flip-card .classes-img,
+.flip-card:hover .classes-img {
+    background: #1f1f1f !important;
+}
+
+/* No blue on any text */
+.flip-card h5,
+.flip-card:hover h5,
+.flip-card p,
+.flip-card:hover p {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Override box shadow to not show blue */
+.flip-card:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
 }
