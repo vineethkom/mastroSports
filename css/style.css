@@ -3277,3 +3277,11 @@ html {
 #founders-section {
     scroll-margin-top: 150px;
 } */
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border: none;
+    padding: 0;
+    width: 100%;
+}
