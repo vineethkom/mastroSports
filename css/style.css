@@ -3482,3 +3482,23 @@ html {
     object-fit: contain;
     display: inline-block;
 }
+
+@media (max-width: 600px) {
+
+    /* Make buttons smaller */
+    .mpcl-buttons .mpcl-btn span {
+        font-size: 10px;
+        padding: 6px 14px;
+        letter-spacing: 1px;
+    }
+
+    /* Hide full text */
+    .mpcl-buttons .mpcl-btn span .full-text {
+        display: none;
+    }
+
+    /* Show short text */
+    .mpcl-buttons .mpcl-btn span .short-text {
+        display: inline;
+    }
+}
